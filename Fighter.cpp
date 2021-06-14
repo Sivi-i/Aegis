@@ -4,14 +4,14 @@ void Fighter::tookDamage(int dmg) {
 }
 
 int Fighter::attacking() {
-	int damageDone = (rand() % attack + (attack * 1.2) + (speed*1.4));
+	int damageDone = (rand() % attack + (attack * 1.2) + (speed*1.25));
 	return damageDone;
 }
 
 std::vector<int> Fighter::specialAttack() {
 	std::vector<int> comboDamage;
 
-	int damageDone = rand() % attack + (attack+(speed+25));
+	int damageDone = rand() % attack + (attack+(speed));
 	for (int i = 0; i < 2; i++) {
 		comboDamage.push_back((damageDone * .2));
 	}

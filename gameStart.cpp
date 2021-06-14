@@ -25,6 +25,8 @@ gameStart::~gameStart() {
 	 char playerInput;
 	 bool isMiniBoss, isBoss, isEnemy;	//For Determining if the Player is facing a Mini Boss, an actual Boss, or a Basic Enemy. 
 	 isEnemy = true;
+	 isMiniBoss = false;
+	 isBoss = false;
 
 	 while (1) {
 
@@ -38,9 +40,9 @@ gameStart::~gameStart() {
 				 isBoss = false;
 				 isEnemy = true;
 			 }
-			 int enemyPicker = rand() % 4 + 1;
+			 int bossPicker = rand() % 4 + 1;
 			 //Starting PsyFighter
-			 if (enemyPicker == 1) {
+			 if (bossPicker == 1) {
 				 FighterBuilder* fighterBuilder = new FighterBuilder();
 				 EnemyDirector* director = new EnemyDirector(fighterBuilder, player);
 				 Fighter* enemyFighter = new Fighter();
@@ -64,6 +66,8 @@ gameStart::~gameStart() {
 					 case 'N':
 						 std::cout << "\nSayonara.\n\n";
 						 exit(0);
+					 default:
+						 std::cout << "\n-Please Enter a Valid Response-\n";
 					 }
 				 }
 				 else {
@@ -79,11 +83,13 @@ gameStart::~gameStart() {
 						 bossEnemy++;
 						 std::cout << "Good Luck!\n\n";
 						 break;
+					 default:
+						 std::cout << "\n-Please Enter a Valid Response-\n";
 					 }
 				 }//Ending Psyfighter
 
 				 //Starting Dragoon
-				 if (enemyPicker == 2) {
+				 if (bossPicker == 2) {
 					 WarriorBuilder* warriorBuilder = new WarriorBuilder();
 					 EnemyDirector* director = new EnemyDirector(warriorBuilder, player);
 					 Warrior* enemyWarrior = new Warrior();
@@ -107,6 +113,9 @@ gameStart::~gameStart() {
 						 case 'N':
 							 std::cout << "Sayonara.\n\n";
 							 exit(0);
+
+						 default:
+							 std::cout << "\n-Please Enter a Valid Response-\n";
 						 }
 					 }
 					 else {
@@ -122,10 +131,13 @@ gameStart::~gameStart() {
 							 bossEnemy++;
 							 std::cout << "Good Luck!\n\n";
 							 break;
+
+						 default:
+							 std::cout << "\n-Please Enter a Valid Response-\n";
 						 }
 					 }//Ending Dragoon
 
-					 if (enemyPicker == 3) {//Starting Soul Reaver
+					 if (bossPicker == 3) {//Starting Soul Reaver
 						 MageBuilder* mageBuilder = new MageBuilder();
 						 EnemyDirector* director = new EnemyDirector(mageBuilder, player);
 						 Mage* enemyMage = new Mage();
@@ -147,6 +159,9 @@ gameStart::~gameStart() {
 							 case 'N':
 								 std::cout << "Sayonara.\n\n";
 								 exit(0);
+
+							 default:
+								 std::cout << "\n-Please Enter a Valid Response-\n";
 							 }
 						 }
 						 else {
@@ -161,11 +176,13 @@ gameStart::~gameStart() {
 								 bossEnemy++;
 								 std::cout << "Good Luck!\n\n";
 
+							 default:
+								 std::cout << "\n-Please Enter a Valid Response-\n";
 							 }
 						 }//Ending Soul Reaver
 
 						 //Starting Terror Knight
-						 if (enemyPicker == 4) {
+						 if (bossPicker == 4) {
 							 bossEnemy++;
 							 KnightBuilder* knightBuilder = new KnightBuilder();
 							 EnemyDirector* director = new EnemyDirector(knightBuilder, player);
@@ -188,6 +205,9 @@ gameStart::~gameStart() {
 								 case 'N':
 									 std::cout << "Sayonara.\n\n";
 									 exit(0);
+
+								 default:
+									 std::cout << "\n-Please Enter a Valid Response-\n";
 								 }
 							 }
 							 else {
@@ -203,6 +223,8 @@ gameStart::~gameStart() {
 									 std::cout << "Good Luck!\n\n";
 									 break;
 
+								 default:
+									 std::cout << "\n-Please Enter a Valid Response-\n";
 								 }
 							 }
 						 }
@@ -221,10 +243,10 @@ gameStart::~gameStart() {
 				 isBoss = true;
 				 bossEnemy = 0;
 			 }
-			 int enemyPicker = rand() % 4 + 1;
+			 int miniPicker = rand() % 4 + 1;
 			 miniBoss++;
 			 //Starting Master Pugilist
-			 if (enemyPicker == 1) {
+			 if (miniPicker == 1) {
 				 FighterBuilder* fighterBuilder = new FighterBuilder();
 				 EnemyDirector* director = new EnemyDirector(fighterBuilder, player);
 				 Fighter* enemyFighter = new Fighter();
@@ -246,6 +268,9 @@ gameStart::~gameStart() {
 					 case 'N':
 						 std::cout << "\nSayonara.\n\n";
 						 exit(0);
+
+					 default:
+						 std::cout << "\n-Please Enter a Valid Response-\n";
 					 }
 				 }
 				 else {
@@ -265,12 +290,14 @@ gameStart::~gameStart() {
 						 isMiniBoss = false;
 						 std::cout << "Good Luck!\n\n";
 						 break;
+					 default:
+						 std::cout << "\n-Please Enter a Valid Response-\n";
 
 					 }
 				 }//Ending Master Pugilist
 
 				 //Starting Berserker
-				 if (enemyPicker == 2) {
+				 if (miniPicker == 2) {
 					 WarriorBuilder* warriorBuilder = new WarriorBuilder();
 					 EnemyDirector* director = new EnemyDirector(warriorBuilder, player);
 					 Warrior* enemyWarrior = new Warrior();
@@ -292,6 +319,8 @@ gameStart::~gameStart() {
 						 case 'N':
 							 std::cout << "Sayonara.\n\n";
 							 exit(0);
+						 default:
+							 std::cout << "\n-Please Enter a Valid Response-\n";
 						 }
 					 }
 					 else {
@@ -311,10 +340,12 @@ gameStart::~gameStart() {
 							 isMiniBoss = false;
 							 std::cout << "Good Luck!\n\n";
 							 break;
+						 default:
+							 std::cout << "Please Enter a Valid Response\n";
 						 }
 					 }//Ending Berserker
 
-					 if (enemyPicker == 3) {//Starting Archmage
+					 if (miniPicker == 3) {//Starting Archmage
 						 MageBuilder* mageBuilder = new MageBuilder();
 						 EnemyDirector* director = new EnemyDirector(mageBuilder, player);
 						 Mage* enemyMage = new Mage();
@@ -336,6 +367,8 @@ gameStart::~gameStart() {
 							 case 'N':
 								 std::cout << "Sayonara.\n\n";
 								 exit(0);
+							 default:
+								 std::cout << "\n-Please Enter a Valid Response-\n";
 							 }
 						 }
 						 else {
@@ -355,12 +388,14 @@ gameStart::~gameStart() {
 								 isMiniBoss = false;
 								 std::cout << "Good Luck!\n\n";
 								 break;
+							 default:
+								 std::cout << "\n-Please Enter a Valid Response-\n";
 							 }
 						 }//Ending Archmage
 					 }
 
 					 //Beginning Holy Knight
-					 if (enemyPicker == 4) {
+					 if (miniPicker == 4) {
 						 KnightBuilder* knightBuilder = new KnightBuilder();
 						 EnemyDirector* director = new EnemyDirector(knightBuilder, player);
 						 Knight* enemyKnight = new Knight();
@@ -382,6 +417,8 @@ gameStart::~gameStart() {
 							 case 'N':
 								 std::cout << "Sayonara.\n\n";
 								 exit(0);
+							 default:
+								 std::cout << "\n-Please Enter a Valid Response-\n";
 							 }
 						 }
 						 else {
@@ -401,6 +438,8 @@ gameStart::~gameStart() {
 								 isMiniBoss = false;
 								 std::cout << "Good Luck!\n\n";
 								 break;
+							 default:
+								 std::cout << "\n-Please Enter a Valid Response-\n";
 							 }
 						 }
 					 }
@@ -440,6 +479,8 @@ gameStart::~gameStart() {
 					 case 'N':
 						 std::cout << "\nSayonara.\n\n";
 						 exit(0);
+					 default:
+						 std::cout << "\n-Please Enter a Valid Response-\n";
 					 }
 				 }
 				 else {
@@ -452,6 +493,9 @@ gameStart::~gameStart() {
 					 case 'N':
 						 basicEnemy++;
 						 std::cout << "Good Luck!\n\n";
+					 default:
+						 std::cout << "\n-Please Enter a Valid Response-\n";
+						 break;
 
 					 }
 				 }
@@ -479,6 +523,10 @@ gameStart::~gameStart() {
 					 case 'N':
 						 std::cout << "Sayonara.\n\n";
 						 exit(0);
+
+					 default:
+						 std::cout << "\n-Please Enter a Valid Response-\n";
+
 					 }
 				 }
 				 else {
@@ -492,7 +540,12 @@ gameStart::~gameStart() {
 						 basicEnemy++;
 						 std::cout << "Good Luck!\n\n";
 
+					 default:
+						 std::cout << "\n-Please Enter a Valid Response-\n";
+
 					 }
+
+
 				 }
 			 }
 			 if (enemyPicker == 3) {
@@ -518,6 +571,9 @@ gameStart::~gameStart() {
 					 case 'N':
 						 std::cout << "Sayonara.\n\n";
 						 exit(0);
+
+					 default:
+						 std::cout << "\n-Please Enter a Valid Response-\n";
 					 }
 				 }
 				 else {
@@ -531,6 +587,8 @@ gameStart::~gameStart() {
 						 basicEnemy++;
 						 std::cout << "Good Luck!\n\n";
 
+					 default:
+						 std::cout << "\n-Please Enter a Valid Response-\n";
 					 }
 				 }
 			 }
@@ -557,6 +615,9 @@ gameStart::~gameStart() {
 					 case 'N':
 						 std::cout << "Sayonara.\n\n";
 						 exit(0);
+
+					 default:
+						 std::cout << "\n-Please Enter a Valid Response-\n";
 					 }
 				 }
 				 else {
@@ -570,6 +631,8 @@ gameStart::~gameStart() {
 						 basicEnemy++;
 						 std::cout << "Good Luck!\n\n";
 
+					 default:
+						 std::cout << "\n-Please Enter a Valid Response-\n";
 					 }
 				 }
 			 }
@@ -594,7 +657,7 @@ gameStart::~gameStart() {
 	 char playerInput;
 	 bool inBattle = true;
 	 int battleRound, enemyAttack; //battleRound keeps track of whose turn it is. enemyAttack determines the enemy's type of attack used.
-	 double enemySpecial, playerSpecial; //Determines the amount of Special Attacks the Player and Enemy has at a particular moment
+	 double enemySpecial = 0, playerSpecial; //Determines the amount of Special Attacks the Player and Enemy has at a particular moment
 	 bool enemyReady, playerReady; //Determines if the User or Enemy can use their Special Attacks
 
 	 std::cout << "\nNew Combatant! " << enemyType << "\n";
@@ -715,7 +778,7 @@ gameStart::~gameStart() {
 							 break;
 						 }
 					 default:
-						 std::cout << "Please enter a Valid Command!\n\n";
+						 std::cout << "\n-Please Enter a Valid Response-\n";
 						 break;
 				 }
 			 }

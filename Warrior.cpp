@@ -5,7 +5,7 @@ void Warrior::tookDamage(int dmg) {
 }
 
 int Warrior::attacking() {
-	int damageDone = rand() % attack + ((attack+speed)*1.3);
+	int damageDone = rand() % attack + (int)((attack+speed)*1.3);
 	return damageDone;
 };
 
@@ -15,7 +15,7 @@ char* Warrior::getType() {
 
 std::vector<int> Warrior::specialAttack() {
 	std::vector<int> damage;
-	int damageDone = rand() % attack + (attack * 2.5);
+	int damageDone = rand() % attack + (attack*1.4);
 	damage.push_back(damageDone);
 	return damage;
 }

@@ -61,7 +61,7 @@ void Player::heal() {
 
 void Player::tookDamage(int damage) {
 	int tempHP = this->hp;
-	int playerDmg = (damage - (this->defense)1.3);
+	int playerDmg = (damage - (this->defense)*1.3);
 
 
 	switch (isGuarding)
