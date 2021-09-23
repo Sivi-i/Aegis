@@ -7,7 +7,7 @@ Player::Player() {
 	this->defense = 10;
 	this->speed = 10;
 	this->magic = 5;
-	this->statPoints = 0;
+	this->statPoints = 5000;
 	this->experience = 0;
 }
 
@@ -21,7 +21,7 @@ int Player::normAttack() {
 }
 
 int Player::specialAttack() {
-	int damageDone = rand() % attack + ((attack + speed + magic)+(speed*1.5));
+	int damageDone = rand() % attack + ((attack + speed + magic)+(int)(speed*1.5));
 	return damageDone;
 }
 
@@ -41,19 +41,19 @@ void Player::speedUp() {
 void Player::heal() {
 	if(magic <= 50){
 	std::cout << "===---------------------------------------------------------===\n";
-	std::cout << "Healed " << (int)(magic * 3.5) << " HP!\n";
+	std::cout << "Healed " << (int)(magic * 2.5) << " HP!\n";
 	std::cout << "===---------------------------------------------------------===\n";
 	this->hp += (magic * 3.5);
 	}
 	else if (magic >= 50 && magic <= 100) {
 		std::cout << "===---------------------------------------------------------===\n";
-		std::cout << "Healed " << (int)(magic * 2.5) << " HP!\n";
+		std::cout << "Healed " << (int)(magic * 1.8) << " HP!\n";
 		std::cout << "===---------------------------------------------------------===\n";
 		this->hp += (magic * 2.5);
 	}
 	else if (magic >= 101 && magic <= 1000) {
 		std::cout << "===---------------------------------------------------------===\n";
-		std::cout << "Healed " << (int)(magic * 2) << " HP!\n";
+		std::cout << "Healed " << (int)(magic * 1.4) << " HP!\n";
 		std::cout << "===---------------------------------------------------------===\n";
 		this->hp += (magic * 2);
 	}
@@ -207,7 +207,7 @@ int Player::hasPoints() {
 
 void Player::expGained(int exp) {
 	this->experience += exp;
-	this->hp = ((level * 100) + defense * 6.5);
+	this->hp = ((level * 50) + defense * 5);
 	int levels = 0;
 		
 	if (this->experience >= 100) {
@@ -243,7 +243,7 @@ std::vector<int> Player::getStats() {
 }
 
 void Player::revivePlayer() {
-	this->hp = ((level * 100) + defense * 2);
+	this->hp = ((level * 50) + defense * 1.2);
 }
 
 bool Player::isDefeated() {

@@ -4,6 +4,7 @@
 #define GAMESTART_H
 
 #include "FighterBuilder.h"
+#include "EnemyBuilder.h"
 #include "EnemyDirector.h"
 #include "KnightBuilder.h"
 #include "WarriorBuilder.h"
@@ -19,7 +20,7 @@ class gameStart {
 
 public:
 	
-	//gameStart(void);
+	gameStart(void);
 	
 	//~gameStart(void);
 

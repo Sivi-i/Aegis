@@ -10,21 +10,22 @@ EnemyDirector::~EnemyDirector() {
 }
 
 void EnemyDirector::createPugilist() {
-	builder_->setLevel(rand() % (4) + (player_->level));
-	builder_->setAttack(player_->level * 1.5);
-	builder_->setDefense(player_->level * 10);
+	enemyLevel_ = (rand() % (player_->level + 4) + (player_->level));
+	builder_->setLevel(enemyLevel_);
+	builder_->setAttack(player_->level * 1.3);
+	builder_->setDefense(player_->level * 5);
 	builder_->setHP(player_->level * 60);
 	builder_->setMagic(player_->level * .8);
-	builder_->setSpeed(player_->level * 3);
+	builder_->setSpeed(player_->level * 2.5);
 	const char* type = "Pugilist";
 	builder_->setType(type);
 }
 
 void EnemyDirector::createKnight() {
-	builder_->setLevel(rand() % player_->level + (player_->level + 1));
-	builder_->setAttack(player_->level * 1.2);
-	builder_->setDefense(player_->level * 15);
-	builder_->setHP(player_->level * 100);
+	builder_->setLevel(rand() % (4) + (player_->level));
+	builder_->setAttack(player_->level * .8);
+	builder_->setDefense(player_->level * 7);
+	builder_->setHP(player_->level * 76);
 	builder_->setMagic(player_->level * .8);
 	builder_->setSpeed(player_->level * 2);
 	const char* type = "Knight";
@@ -32,10 +33,10 @@ void EnemyDirector::createKnight() {
 }
 
 void EnemyDirector::createWarrior() {
-	builder_->setLevel(rand() % player_->level + (player_->level + 1));
-	builder_->setAttack(player_->level * 3);
-	builder_->setDefense(player_->level * 10);
-	builder_->setHP(player_->level * 75);
+	builder_->setLevel(rand() % (4) + (player_->level));
+	builder_->setAttack(player_->level * 2.5);
+	builder_->setDefense(player_->level * 5);
+	builder_->setHP(player_->level * 70);
 	builder_->setMagic(player_->level * .8);
 	builder_->setSpeed(player_->level * 2);
 	const char* type = "Warrior";
@@ -43,11 +44,11 @@ void EnemyDirector::createWarrior() {
 }
 
 void EnemyDirector::createMage() {
-	builder_->setLevel(rand() % player_->level + (player_->level + 1));
+	builder_->setLevel(rand() % (4) + (player_->level));
 	builder_->setAttack(player_->level * 1.1);
 	builder_->setDefense(player_->level * 2);
-	builder_->setHP(player_->level * 80);
-	builder_->setMagic(player_->level * 2);
+	builder_->setHP(player_->level * 50);
+	builder_->setMagic(player_->level * 2.5);
 	builder_->setSpeed(player_->level * 1.5);
 	const char* type = "Mage";
 	builder_->setType(type);

@@ -15,7 +15,7 @@ char* Knight::getType() {
 
 std::vector<int> Knight::specialAttack() {
 	std::vector<int> damage;
-	int damageDone = rand() % defense + (defense*1.05);
+	int damageDone = rand() % attack + (defense*1.01);
 	damage.push_back(damageDone);
 	return damage;
 }

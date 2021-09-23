@@ -45,6 +45,8 @@ private:
 
 	Player* player_;
 
+	int enemyLevel_;
+
 	friend class gameStart;
 };
 

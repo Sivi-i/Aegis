@@ -12,7 +12,7 @@ int Warrior::attacking() {
 char* Warrior::getType() {
 	return (char*)this->type;
 }
-
+	
 std::vector<int> Warrior::specialAttack() {
 	std::vector<int> damage;
 	int damageDone = rand() % attack + (attack*1.4);
