@@ -7,7 +7,7 @@ Player::Player() {
 	this->defense = 10;
 	this->speed = 10;
 	this->magic = 5;
-	this->statPoints = 5000;
+	this->statPoints = 0;
 	this->experience = 0;
 }
 
